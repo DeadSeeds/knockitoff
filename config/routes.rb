@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   get 'users/:id', to: 'users#show'
 
+  resources :users, only: [:show] do
+    resources :items, only: [:create]
+  end
+
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
 
   authenticated :user do

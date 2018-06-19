@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require_tree .
 //=require bootstrap-sprockets
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  $("#item-create-btn").on("click", function() {
+
+  });
+});
