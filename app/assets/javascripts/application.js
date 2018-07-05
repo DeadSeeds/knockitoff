@@ -17,7 +17,35 @@
 //=require bootstrap-sprockets
 
 document.addEventListener("DOMContentLoaded", function(event) {
+  // Create
   $("#item-create-btn").on("click", function() {
+    var userId = $("body").data("current-user");
+    var name = $("#item_name").val();
+
+    $.ajax({
+      method: "POST",
+      url: "users/" + userId + "/items",
+      dataType: "text",
+      data: { "item": { "name": name } }
+    }).done(function(data) {
+      $("#items-list").append(data);
+    })
+  });
+
+  // Delete
+  // $("#item-destroy-btn").on("click", function() {
+  //   var id = $(this).attr(".data-id");
+  //   console.log(id);
+  //   // debugger;
+  //   //
+  //   // $.ajax({
+  //   //
+  //   //
+  //   // }).done(function(data){
+  //   //   $(".data-id").remove(data);
+  //   // })
+
 
   });
+
 });

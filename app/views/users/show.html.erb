@@ -4,9 +4,11 @@
 <h4>Your registered email: <strong><%= @user.email %></strong> </h4><br />
 <h4>Account created on: <%= @user.created_at.strftime("%m/%d/%Y") %> </h4>
 
-<%= render @items %>
+<ul id="items-list">
+  <%= render @items %>
+</ul>
 
-<%= form_for [@user, @item] do |f| %>
+<%= form_for [@user, @user.items.new] do |f| %>
   <%= f.text_field :name %>
   <%= link_to "Create Item", 'javascript:;', id: "item-create-btn"%>
 <% end %>

@@ -7,7 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body data-current-user="<%= current_user_id %>">
 
   <div class="container">
     <div class="nav nav-tabs">
@@ -35,7 +35,7 @@
     <% end %>
 
     <%= yield %>
-    
+
     </div>
 
 </body>
