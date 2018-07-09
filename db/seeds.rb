@@ -5,3 +5,31 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
+
+5.times do
+  User.create!(
+    email:      Faker::Internet.free_email,
+    password:   "password"
+
+  )
+end
+
+60.times do
+  Item.create!(
+    name:     Faker::Hipster.words(2).join,
+    user:     User.all.sample
+  )
+end
+
+u = User.first
+
+u.update_attributes!(
+  email:    'callitaclue@yahoo.com',
+  password: 'password21'
+)
+
+
+puts "Seeds Complete"
+puts "#{User.count} users created"
+puts "#{Item.count} items created"
