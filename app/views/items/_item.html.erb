@@ -1,3 +1,6 @@
 <li data-id="<%= item.id %>"><%= item.name %>
-  <!-- <%= link_to "Delete Item", 'javascript:;', id: "item-destroy-btn"%> -->
+  <!-- <%= link_to edit_item_path(item), remote: true do %>
+    <button>Edit</button>
+  <% end %> -->
+  <%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
 </li>
