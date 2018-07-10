@@ -1,4 +1,5 @@
-<li data-id="<%= item.id %>"><%= item.name %>
+<li data-id="<%= item.id %>"><strong><%= item.name %></strong> &emsp; created <%= distance_of_time_in_words(Time.now, item.created_at) %> ago,
+  &ensp; <%= distance_of_time_in_words(Time.now, item.created_at + 7.days) %>  remaining 
   <!-- <%= link_to edit_item_path(item), remote: true do %>
     <button>Edit</button>
   <% end %> -->

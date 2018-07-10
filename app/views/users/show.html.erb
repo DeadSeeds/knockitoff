@@ -5,7 +5,7 @@
 <h4>Account created on: <%= @user.created_at.strftime("%m/%d/%Y") %> </h4>
 
 <ul id="items-list">
-  <%= render @items %>
+  <%= render @items %> 
 </ul>
 
 <%= form_for [@user, @user.items.new] do |f| %>
