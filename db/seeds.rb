@@ -25,6 +25,7 @@ end
 u = User.first
 
 u.update_attributes!(
+  name:     JB,
   email:    'callitaclue@yahoo.com',
   password: 'password21'
 )
